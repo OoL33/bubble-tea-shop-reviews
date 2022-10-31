@@ -3,5 +3,7 @@
         "activityBar.background": "#4C125A",
         "titleBar.activeBackground": "#6A197E",
         "titleBar.activeForeground": "#FDFBFE"
-    }
+    },
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2
 }

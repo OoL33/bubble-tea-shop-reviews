@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-    def index
-        @shops = Shop.all
-    end
+  def index
+    @shops = Shop.all
+  end
 end
