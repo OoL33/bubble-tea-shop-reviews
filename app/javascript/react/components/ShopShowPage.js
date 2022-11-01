@@ -29,9 +29,9 @@ const ShopShowPage = (props) => {
 			<p>{shop.address}</p>
 			<p>
 				{shop.city}, {shop.state} {shop.zip}
-			</p>
-		</div>
-	)
+      </p>
+    </div>
+  )
 }
 
 export default ShopShowPage
