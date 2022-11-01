@@ -6,9 +6,15 @@ feature 'user visits index page' do
   let!(:onezo) { Shop.create(name: "OneZo", address: "83 Harrison Ave", city: "Boston", state: "MA", zip: "02111") }
 
   scenario 'user sees list of bubble tea shops' do
-    visit "/"
+    visit "/shops"
 
     expect(page).to have_content "Gong Cha"
     expect(page).to have_content "OneZo"
+  end
+
+  scenario 'user clicks on a shop' do
+    visit "/shops"
+    save_and_open_page
+    click_link "Gong Cha"
   end
 end

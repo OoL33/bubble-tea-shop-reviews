@@ -20,5 +20,4 @@ RSpec.describe Api::V1::ShopsController, type: :controller do
       expect(returned_json["zip"]).to eq gong_cha.zip
     end
   end
-
 end
