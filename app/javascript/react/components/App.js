@@ -1,7 +1,15 @@
-import React from 'react'
+import React from "react"
+import ShopShowPage from "./ShopShowPage"
+import {BrowserRouter, Route} from "react-router-dom"
 
 export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+	return (
+		<div>
+			<BrowserRouter>
+				<Route exact path="/shops/:id" component={ShopShowPage} />
+			</BrowserRouter>
+		</div>
+	)
 }
 
 export default App
