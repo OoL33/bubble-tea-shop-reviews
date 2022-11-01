@@ -11,15 +11,4 @@ feature 'user visits index page' do
     expect(page).to have_content "Gong Cha"
     expect(page).to have_content "OneZo"
   end
-
-  scenario 'user clicks on a shop' do
-    visit "/"
-    click_link "Gong Cha"
-
-    expect(page).to have_content gong_cha.name
-    expect(page).to have_content gong_cha.address
-    expect(page).to have_content gong_cha.city
-    expect(page).to have_content gong_cha.state
-    expect(page).to have_content gong_cha.zip
-  end
 end
