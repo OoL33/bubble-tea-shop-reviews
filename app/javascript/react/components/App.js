@@ -1,7 +1,6 @@
 import React from "react"
 import ShopShowPage from "./ShopShowPage"
 import ShopIndexPage from "./ShopIndexPage"
-import ShopTile from "./ShopTile"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 export const App = (props) => {
