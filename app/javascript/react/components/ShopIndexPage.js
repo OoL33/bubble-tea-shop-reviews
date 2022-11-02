@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import ShopTile from "./ShopTile"
 
 const ShopIndexPage = () => {
   const [getShops, setShops] = useState([])
@@ -23,20 +24,20 @@ const ShopIndexPage = () => {
     showShops()
   }, [])
 
-  const shopsList = getShops.map((shop) => {
+  const shopTiles = getShops.map((shop) => {
     return (
-      <li key={shop.id}>
-        <Link to={`/shops/${shop.id}`}>{shop.name}</Link>
-      </li>
+      <Link to={`/shops/${shop.id}`} key={shop.id}>
+        <ShopTile
+          shop={shop}
+        />
+      </Link>
     )
   })
 
   return (
     <div>
     <h1>All Bubble Tea Shops</h1>
-      <ul>
-        {shopsList}
-      </ul>
+      {shopTiles}
     </div>
   )
 }
