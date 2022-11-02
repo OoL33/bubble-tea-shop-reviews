@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2022_10_31_202253) do
     t.string "zip", null: false
     t.string "telephone"
     t.string "website"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

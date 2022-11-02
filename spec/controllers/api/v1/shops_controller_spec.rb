@@ -12,7 +12,7 @@ RSpec.describe Api::V1::ShopsController, type: :controller do
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
 
-      expect(returned_json.length).to eq 10
+      expect(returned_json.length).to eq 11
       expect(returned_json["name"]).to eq gong_cha.name
       expect(returned_json["address"]).to eq gong_cha.address
       expect(returned_json["city"]).to eq gong_cha.city
