@@ -8,6 +8,7 @@ class CreateShops < ActiveRecord::Migration[5.2]
       t.string :zip, null: false
       t.string :telephone
       t.string :website
+      t.string :picture
 
       t.timestamps null: false
     end

@@ -14,7 +14,6 @@ feature 'user visits index page' do
 
   scenario 'user clicks on a shop' do
     visit "/shops"
-    save_and_open_page
     click_link "Gong Cha"
   end
 end
