@@ -26,10 +26,13 @@ const ShopShowPage = (props) => {
   return (
     <div>
       <h1>{shop.name}</h1>
+      <img src={shop.picture}/>
       <p>{shop.address}</p>
       <p>
         {shop.city}, {shop.state} {shop.zip}
       </p>
+      <a href={shop.website} target="_blank">{shop.website}</a>
+      <p>Telephone: {shop.telephone}</p>
     </div>
   )
 }

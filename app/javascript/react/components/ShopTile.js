@@ -4,9 +4,10 @@ const ShopTile = (props) => {
   return (
     <div>
       <h1>{props.shop.name}</h1>
+      <img src={props.shop.picture}/>
       <p>{props.shop.address}</p>
       <p>
-        {props.shop.city}, {props.shop.state} {props.shop.zip}
+        {props.shop.city}
       </p>
     </div>
   )
