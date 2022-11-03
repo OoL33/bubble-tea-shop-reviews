@@ -1,7 +1,11 @@
 import React, {useState, useEffect} from "react"
+import { Link } from "react-router-dom"
+import ShopReviewsList from "./ShopReviewsList"
 
 const ShopShowPage = (props) => {
-  const [shop, setShop] = useState({})
+  const [shop, setShop] = useState({
+    reviews: []
+  })
 
   const fetchShop = async () => {
     try {
@@ -33,6 +37,14 @@ const ShopShowPage = (props) => {
       </p>
       <a href={shop.website} target="_blank">{shop.website}</a>
       <p>Telephone: {shop.telephone}</p>
+
+      <h2>{shop.name}'s Reviews</h2>
+      <ShopReviewsList reviews={shop.reviews} />
+      <Link to={`/shops/${shop.id}/reviews/new`}>
+        <button type="button" className="button">
+          Add a new Review
+        </button>
+      </Link>
     </div>
   )
 }

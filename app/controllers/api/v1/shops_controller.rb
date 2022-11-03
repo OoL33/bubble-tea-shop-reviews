@@ -4,7 +4,7 @@ class Api::V1::ShopsController < ApiController
   end
 
   def show
-    render json: Shop.find(params[:id]), serializer: ShopShowSerializer
+    render json: Shop.find(params[:id]), serializer: ShopShowSerializer, include: ['reviews.user']
   end
 
   def create
