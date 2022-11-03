@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get '/shops/:id', to: 'homes#index'
   get '/shops', to: 'homes#index'
 
-
   namespace :api do
     namespace :v1 do
       resources :shops, only: [:index, :show, :create]
