@@ -9,7 +9,9 @@ const ShopReviewsList = (props) => {
   })
 
   return(
-    <p>{reviewTiles}</p>
+    <div>
+      {reviewTiles}
+    </div>
   )
 }
 

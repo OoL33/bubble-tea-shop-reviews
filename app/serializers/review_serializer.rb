@@ -1,5 +1,6 @@
 class ReviewSerializer < ActiveModel::Serializer
-  attributes :id, :rating, :body, :shop_id, :user_id
+  attributes :id, :rating, :body
 
+  belongs_to :shop
   belongs_to :user
 end

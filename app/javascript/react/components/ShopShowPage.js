@@ -4,14 +4,6 @@ import ShopReviewsList from "./ShopReviewsList"
 
 const ShopShowPage = (props) => {
   const [shop, setShop] = useState({
-    name: "",
-    address: "",
-    city: "",
-    state: "",
-    zip: "",
-    telephone: "",
-    website: "",
-    picture: "",
     reviews: []
   })
 
