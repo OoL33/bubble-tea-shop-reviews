@@ -17,7 +17,7 @@ class Api::V1::ShopsController < ApiController
     end
   end
 
-  private 
+  private
 
   def shop_params
     params.require(:shop).permit(:name, :address, :city, :state, :zip)

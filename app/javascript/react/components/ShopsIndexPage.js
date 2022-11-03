@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import ShopTile from "./ShopTile"
 import NewShopForm from "./NewShopForm"
 
-const ShopIndexPage = () => {
+const ShopsIndexPage = () => {
   const [getShops, setShops] = useState([])
 
   const showShops = async () => {
@@ -51,4 +51,4 @@ const ShopIndexPage = () => {
   )
 }
 
-export default ShopIndexPage
+export default ShopsIndexPage
