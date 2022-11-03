@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react"
 import NewReviewForm from "./NewReviewForm"
+import { Link } from "react-router-dom"
+import ShopReviewsList from "./ShopReviewsList"
 
 const ShopShowPage = (props) => {
-  const [shop, setShop] = useState({})
+  const [shop, setShop] = useState({
+    reviews: []
+  })
 
   const fetchShop = async () => {
     try {
@@ -40,8 +44,15 @@ const ShopShowPage = (props) => {
 				<NewReviewForm 
 					show={props}
 				/>
-			</div>
-		</div>
+			</div>		
+      <h2>{shop.name}'s Reviews</h2>
+      <ShopReviewsList reviews={shop.reviews} />
+      <Link to={`/shops/${shop.id}/reviews/new`}>
+        <button type="button" className="button">
+          Add a new Review
+        </button>
+      </Link>
+    </div>
   )
 }
 

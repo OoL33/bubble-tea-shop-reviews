@@ -5,5 +5,5 @@ katie = User.create(email: "katief906@gmail.com", password: "Ilovecoding4fun!")
 karen = User.create(email: "karen@aol.com", password: "Bobalover2022")
 alana = User.create(email: "alana@outlook.com", password: "Earlgraymilktea4life")
 
-review_1 = Review.create(rating: 5, body: "Best Earl Gray milk tea EVER!", shop_id: gong_cha.id, user_id: katie.id)
-review_2 = Review.create(rating: 4, body: "Great but very sweet", shop_id: one_zo.id, user_id: karen.id)
+review_1 = Review.create(rating: 5, body: "Best Earl Gray milk tea EVER!", shop: gong_cha, user: katie)
+review_2 = Review.create(rating: 4, body: "Great but very sweet", shop: one_zo, user: karen)
