@@ -42,7 +42,7 @@ const ShopIndexPage = () => {
         {shopTiles}
       </div>
 
-      <Link to={`/shops/new`}>
+      <Link to="/shops/new">
         <button type="button" className="button">
           Add a new Bubble Tea Shop
         </button>

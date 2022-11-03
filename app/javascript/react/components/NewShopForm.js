@@ -58,7 +58,6 @@ const NewShopForm = (props) => {
           const errorMessage = `${response.status} (${response.statusText})`
           throw new Error(errorMessage)
         }
-        console.log("Shop was added successfully!")
         setShouldRedirect(true)
       } catch(err) {
         console.error(`Error in fetch: ${err.message}`)
@@ -140,16 +139,6 @@ const NewShopForm = (props) => {
           type="text"
           name="website"
           value={shopRecord.website}
-          onChange={handleInputChange}
-        />
-      </label>
-
-      <label>
-        Shop Picture (URL)
-        <input 
-          type="text"
-          name="picture"
-          value={shopRecord.picture}
           onChange={handleInputChange}
         />
       </label>
