@@ -27,14 +27,12 @@ class Api::V1::ShopsController < ApiController
   end
 
   def authorize_user
-    binding.pry
     if !user_signed_in? || !(current_user.role == "admin")
       render json: {error: ["Only admins have access to this page."]}
     end
   end
 
   def authenticate_user
-    binding.pry
     if !user_signed_in?
       render json: {error: ["You need to be signed in first."]}
     end

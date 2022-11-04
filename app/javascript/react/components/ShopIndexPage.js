@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import ShopTile from "./ShopTile"
 
 const ShopIndexPage = () => {
-  // debugger
   const [getShops, setShops] = useState([])
 
   const showShops = async () => {

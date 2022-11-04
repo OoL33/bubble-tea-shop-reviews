@@ -15,7 +15,6 @@ class HomesController < ApplicationController
 
   def authorize_user
     if !user_signed_in? || !(current_user.role == "admin")
-      binding.pry
       flash[:notice] = "You do not have access to this page."
       redirect_to root_path 
     end
