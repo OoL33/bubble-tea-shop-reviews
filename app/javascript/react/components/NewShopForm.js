@@ -73,81 +73,103 @@ const NewShopForm = (props) => {
     <form onSubmit={postNewShop}>
       <h2>Submit a new Bubble Tea Shop</h2>
       <ErrorList errors={errors} />
-      <label>
-        Shop Name
-        <input 
-          type="text"
-          name="name"
-          value={shopRecord.name}
-          onChange={handleInputChange}
-        />
-      </label>
 
-      <label>
-        Address
-        <input 
-          type="text"
-          name="address"
-          value={shopRecord.address}
-          onChange={handleInputChange}
-        />
-      </label>
+      <div className="grid-container form-container">
+        <div className="grid-x grid-padding-x">
+          <div className="medium-6 cell">
+            <label>
+              Shop Name
+              <input 
+                type="text"
+                placeholder="Ex. Gong Cha"
+                name="name"
+                value={shopRecord.name}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
 
-      <label>
-        City
-        <input 
-          type="text"
-          name="city"
-          value={shopRecord.city}
-          onChange={handleInputChange}
-        />
-      </label>
+          <div className="small-12 cell">
+            <label>
+              Address
+              <input 
+                type="text"
+                placeholder="123 Main Street Unit 1"
+                name="address"
+                value={shopRecord.address}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
 
-      <label>
-        State
-        <input 
-          type="text"
-          name="state"
-          value={shopRecord.state}
-          onChange={handleInputChange}
-        />
-      </label>
+          <div className="medium-6 cell">
+            <label>
+              City
+              <input 
+                type="text"
+                name="city"
+                value={shopRecord.city}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
 
-      <label>
-        Zip Code
-        <input 
-          type="text"
-          name="zip"
-          value={shopRecord.zip}
-          onChange={handleInputChange}
-        />
-      </label>
+          <div className="medium-6 cell">
+            <label>
+              State
+              <input 
+                type="text"
+                name="state"
+                value={shopRecord.state}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
 
-      <label>
-        Telephone
-        <input 
-          type="text"
-          name="telephone"
-          value={shopRecord.telephone}
-          onChange={handleInputChange}
-        />
-      </label>
+          <div className="small-12 cell">
+            <label>
+              Zip Code
+              <input 
+                type="text"
+                name="zip"
+                value={shopRecord.zip}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
 
-      <label>
-        Website
-        <input 
-          type="text"
-          name="website"
-          value={shopRecord.website}
-          onChange={handleInputChange}
-        />
-      </label>
+          <div className="medium-9 cell">
+            <label>
+              Telephone
+              <input 
+                type="text"
+                placeholder="XXX-XXX-XXXX"
+                name="telephone"
+                value={shopRecord.telephone}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
 
-      <div className="button-group">
-        <input 
-          className="button"
-          type="submit"
-        />
+          <div className="medium-9 cell">
+            <label>
+              Website
+              <input 
+                type="text"
+                name="website"
+                value={shopRecord.website}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
+
+          <div className="button-group cell">
+            <input 
+              className="button"
+              type="submit"
+            />
+          </div>
+        </div>
       </div>
     </form>
   )
