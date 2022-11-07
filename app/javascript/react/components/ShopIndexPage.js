@@ -20,10 +20,6 @@ const ShopIndexPage = () => {
     }
   }
 
-  // if (!currentUser) {
-  //   window.location.pathname = "users/sign_in"
-  // }
-
   useEffect(() => {
     showShops()
   }, [])
