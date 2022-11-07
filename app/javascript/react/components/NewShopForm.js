@@ -76,7 +76,7 @@ const NewShopForm = (props) => {
 
       <div className="grid-container form-container">
         <div className="grid-x grid-padding-x">
-          <div className="small-12 medium-6 cell">
+          <div className="medium-6 cell">
             <label>
               Shop Name
               <input 
@@ -102,7 +102,7 @@ const NewShopForm = (props) => {
             </label>
           </div>
 
-          <div className="small-12 medium-6 cell">
+          <div className="medium-6 cell">
             <label>
               City
               <input 
@@ -114,7 +114,7 @@ const NewShopForm = (props) => {
             </label>
           </div>
 
-          <div className="small-12 medium-6 cell">
+          <div className="medium-6 cell">
             <label>
               State
               <input 
@@ -138,7 +138,7 @@ const NewShopForm = (props) => {
             </label>
           </div>
 
-          <div className="small-12 medium-9 cell">
+          <div className="medium-9 cell">
             <label>
               Telephone
               <input 
@@ -151,7 +151,7 @@ const NewShopForm = (props) => {
             </label>
           </div>
 
-          <div className="small-12 medium-9 cell">
+          <div className="medium-9 cell">
             <label>
               Website
               <input 
