@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import ShopTile from "./ShopTile"
-import NewShopForm from "./NewShopForm"
 
 const ShopIndexPage = () => {
   const [getShops, setShops] = useState([])
@@ -37,16 +36,8 @@ const ShopIndexPage = () => {
 
   return (
     <div>
-      <div>
-        <h1>All Bubble Tea Shops</h1>
-        {shopTiles}
-      </div>
-
-      <Link to="/shops/new">
-        <button type="button" className="button">
-          Add a new Bubble Tea Shop
-        </button>
-      </Link>
+      <h1>All Bubble Tea Shops</h1>
+      {shopTiles}
     </div>
   )
 }
