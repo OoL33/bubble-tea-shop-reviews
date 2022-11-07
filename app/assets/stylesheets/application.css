@@ -15,3 +15,27 @@
  *= require foundation_and_overrides
 
  */
+
+ /*= require foundation */
+
+
+
+.contain-image {
+    height: 200px;
+    width: 300px;
+    overflow: hidden;
+    object-position: center;
+}
+
+.card {
+    text-align: center;
+    margin: 10px;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.webpage {
+    padding: 15px;
+}

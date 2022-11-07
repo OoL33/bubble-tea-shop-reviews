@@ -36,10 +36,14 @@ const ShopIndexPage = () => {
   })
 
   return (
-    <div>
+    <div className="webpage">
       <div>
         <h1>All Bubble Tea Shops</h1>
-        {shopTiles}
+        <div className="grid-container">
+          <div className="grid-x grid-margin-x small-up-2 medium-up-3 large-up-4">
+            {shopTiles}
+          </div>
+        </div>
       </div>
 
       <Link to="/shops/new">
