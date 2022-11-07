@@ -1,6 +1,6 @@
 class Api::V1::ShopsController < ApiController 
   before_action :authenticate_user, except: [:index, :show]
-  before_action :authorize_user, except: [:index, :show, :create]
+  before_action :authorize_user, except: [:create]
 
   def index
     render json: Shop.all
