@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import ShopTile from "./ShopTile"
-import NewShopForm from "./NewShopForm"
 
 const ShopIndexPage = () => {
   const [getShops, setShops] = useState([])
@@ -24,6 +23,8 @@ const ShopIndexPage = () => {
   useEffect(() => {
     showShops()
   }, [])
+
+
 
   const shopTiles = getShops.map((shop) => {
     return (
