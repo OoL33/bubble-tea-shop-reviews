@@ -76,31 +76,31 @@ const NewShopForm = (props) => {
 
       <div className="grid-container form-container">
         <div className="grid-x grid-padding-x">
-            <div className="small-12 medium-6 cell">
-              <label>
-                Shop Name
-                <input 
-                  type="text"
-                  placeholder="Ex. Gong Cha"
-                  name="name"
-                  value={shopRecord.name}
-                  onChange={handleInputChange}
-                />
-              </label>
-            </div>
+          <div className="small-12 medium-6 cell">
+            <label>
+              Shop Name
+              <input 
+                type="text"
+                placeholder="Ex. Gong Cha"
+                name="name"
+                value={shopRecord.name}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
 
-            <div className="small-12 cell">
-              <label>
-                Address
-                <input 
-                  type="text"
-                  placeholder="123 Main Street Unit 1"
-                  name="address"
-                  value={shopRecord.address}
-                  onChange={handleInputChange}
-                />
-              </label>
-            </div>
+          <div className="small-12 cell">
+            <label>
+              Address
+              <input 
+                type="text"
+                placeholder="123 Main Street Unit 1"
+                name="address"
+                value={shopRecord.address}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
 
           <div className="small-12 medium-6 cell">
             <label>
@@ -151,17 +151,17 @@ const NewShopForm = (props) => {
             </label>
           </div>
 
-            <div className="small-12 medium-9 cell">
-              <label>
-                Website
-                <input 
-                  type="text"
-                  name="website"
-                  value={shopRecord.website}
-                  onChange={handleInputChange}
-                />
-              </label>
-            </div>
+          <div className="small-12 medium-9 cell">
+            <label>
+              Website
+              <input 
+                type="text"
+                name="website"
+                value={shopRecord.website}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
 
           <div className="button-group cell">
             <input 
