@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand');
 
 .top-bar{
   background-color: #D4A373;
@@ -10,12 +11,22 @@
   color: #faedcd;
 }
 
+.header-link>a{
+  background-color: #D4A373;
+  color: #faedcd;
+}
+
 .header-link:hover{
   color: #E9EDC9 ;
 }
 
+.header-link>a:hover{
+  background-color: #b1ba63;
+  color: #E9EDC9 ;
+}
+
 .header-text{
-  font-family: 'Fredoka One', serif;
+  font-family: 'Fredoka One', sans-serif;
 }
 
 body{
@@ -25,7 +36,11 @@ body{
 h1, h2 {
   color: #D4A373;
   margin: 1em;
-  font-family: 'Fredoka One', serif;
+  font-family: 'Fredoka One', sans-serif;
+}
+
+h3, h4, h5, h6, p {
+  font-family: 'Quicksand', sans-serif;
 }
 
 .form-container{
@@ -37,6 +52,14 @@ h1, h2 {
 
 .button{
   background-color: #CCD5AE;
+  font-family: 'Quicksand', sans-serif;
+  color: #FEFAE0;
+  border-radius: 1em;
+}
+
+.button>a{
+  font-family: 'Quicksand', sans-serif;
+  color: #FEFAE0;
   border-radius: 1em;
 }
 
@@ -49,8 +72,13 @@ h1, h2 {
 }
 
 .card {
+  background-color: #CCD5AE;
   text-align: center;
   margin: 1em;
+}
+
+.card:hover{
+  background-color: #D4A373;
 }
 
 .card-title {
@@ -68,6 +96,16 @@ h1, h2 {
 .review-box{
   border: solid #CCD5AE;
   border-radius: 1em;
-  margin: 2em;
+  margin: 1em;
   padding: 1em 2em;
 }
+
+.callout.secondary{
+  font-family: 'Quicksand', sans-serif;
+  background-color: #E9EDC9;
+}
+
+.cell{
+  margin-bottom: 1em;
+}
+
