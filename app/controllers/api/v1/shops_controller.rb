@@ -1,5 +1,5 @@
 class Api::V1::ShopsController < ApiController 
-  before_action :authorize_admin, only: [:create]
+  before_action :authorize_user, only: [:create]
 
   def index
     render json: Shop.all
