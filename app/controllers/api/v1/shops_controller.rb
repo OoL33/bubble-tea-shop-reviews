@@ -1,4 +1,4 @@
-class Api::V1::ShopsController < ApiController 
+class Api::V1::ShopsController < ApiController
   before_action :authorize_admin, only: [:create]
 
   def index
@@ -19,7 +19,7 @@ class Api::V1::ShopsController < ApiController
     end
   end
 
-  private 
+  private
 
   def shop_params
     params.require(:shop).permit(:name, :address, :city, :state, :zip)

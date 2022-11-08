@@ -22,7 +22,7 @@ body{
   background-color: #FEFAE0;
 }
 
-h2{
+h1, h2 {
   color: #D4A373;
   margin: 1em;
   font-family: 'Fredoka One', serif;
@@ -38,6 +38,27 @@ h2{
 .button{
   background-color: #CCD5AE;
   border-radius: 1em;
+}
+
+.contain-image {
+  height: 15em;
+  width: 20em;
+  overflow: hidden;
+  background-position: center;
+  object-fit: cover;
+}
+
+.card {
+  text-align: center;
+  margin: 1em;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.webpage {
+  margin: 1em;
 }
 
 .button:hover{

@@ -24,6 +24,8 @@ const ShopIndexPage = () => {
     showShops()
   }, [])
 
+
+
   const shopTiles = getShops.map((shop) => {
     return (
       <Link to={`/shops/${shop.id}`} key={shop.id}>
@@ -35,9 +37,21 @@ const ShopIndexPage = () => {
   })
 
   return (
-    <div>
-      <h1>All Bubble Tea Shops</h1>
-      {shopTiles}
+    <div className="webpage">
+      <div>
+        <h1>All Bubble Tea Shops</h1>
+        <div className="grid-container">
+          <div className="grid-x grid-margin-x small-up-2 medium-up-3 large-up-4">
+            {shopTiles}
+          </div>
+        </div>
+      </div>
+
+      <Link to="/shops/new">
+        <button type="button" className="button">
+          Add a new Bubble Tea Shop
+        </button>
+      </Link>
     </div>
   )
 }
