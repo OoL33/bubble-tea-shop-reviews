@@ -21,7 +21,9 @@ const NewReviewForm = (props) => {
 			const shopId = props.show.match.params.id
 			const response = await fetch(`/api/v1/shops/${shopId}/reviews`, {
 				method: "POST",
+				credentials: "same-origin",
 				headers: {
+					"Accept": "application/json",
 					"Content-Type": "application/json"
 				},
 				body: JSON.stringify({ review: reviewRecord })
@@ -31,6 +33,7 @@ const NewReviewForm = (props) => {
 				throw new Error(errorMessage)
 			}
 			const responseBody = await response.json()
+			setReviewRecord(responseBody)
 
 
 		} catch (error) {
