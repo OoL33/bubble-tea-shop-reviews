@@ -29,7 +29,7 @@ const ShopShowPage = (props) => {
 
   return (
     <div>
-      <h1>{shop.name}</h1>
+      <h1 className="header-text">{shop.name}</h1>
       <img src={shop.picture}/>
       <p>{shop.address}</p>
       <p>
