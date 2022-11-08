@@ -41,7 +41,7 @@ const NewShopForm = (props) => {
     })
   }
 
-  const postNewShop = async (event) => {
+  const postNewShop = async(event) => {
     event.preventDefault()
 
     if (validForSubmission()) {
@@ -50,6 +50,7 @@ const NewShopForm = (props) => {
           method: "POST",
           credentials: "same-origin",
           headers: {
+            "Accept": "application/json",
             "Content-Type": "application/json"
           },
           body: JSON.stringify({ shop: shopRecord })
@@ -58,9 +59,16 @@ const NewShopForm = (props) => {
           const errorMessage = `${response.status} (${response.statusText})`
           throw new Error(errorMessage)
         }
-        setShouldRedirect(true)
-      } catch(err) {
-        console.error(`Error in fetch: ${err.message}`)
+        const shopBody = await response.json()
+        if (shopBody.shop){
+          setShouldRedirect(true)
+        } else if (shopBody.error[0] === "You need to be signed in first") {
+          window.location("/users/sign_in")
+        } else if (shopBody.error){
+          setErrors(shopBody.error)
+        }
+      } catch(error) {
+        console.error(`Error in fetch: ${error.message}`)
       }
     }
   }
