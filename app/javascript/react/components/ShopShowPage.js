@@ -31,7 +31,7 @@ const ShopShowPage = (props) => {
   return (
 		<div>
 			<div>
-				<h1>{shop.name}</h1>
+				<h1 className="header-text">{shop.name}</h1>
 				<img src={shop.picture}/>
 				<p>{shop.address}</p>
 				<p>
@@ -41,10 +41,10 @@ const ShopShowPage = (props) => {
 				<p>Telephone: {shop.telephone}</p>
 			</div>
 			<div>
-				<NewReviewForm 
+				<NewReviewForm
 					show={props}
 				/>
-			</div>		
+			</div>
       <h2>{shop.name}'s Reviews</h2>
       <ShopReviewsList reviews={shop.reviews} />
       <Link to={`/shops/${shop.id}/reviews/new`}>
