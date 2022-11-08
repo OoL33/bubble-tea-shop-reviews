@@ -28,23 +28,28 @@ const ShopShowPage = (props) => {
   }, [])
 
   return (
-    <div>
-      <h1 className="header-text">{shop.name}</h1>
-      <img src={shop.picture}/>
-      <p>{shop.address}</p>
-      <p>
-        {shop.city}, {shop.state} {shop.zip}
-      </p>
-      <a href={shop.website} target="_blank">{shop.website}</a>
-      <p>Telephone: {shop.telephone}</p>
+    <div className="grid-container">
+      <div className="grid-x grid-margin-x">
+        <div className="grid-container cell medium-6">
+          <h1 className="header-text">{shop.name}</h1>
+          <div className="cell">
+            <img src={shop.picture}/>
+          </div>
+          <p>{shop.address}</p>
+          <p>
+            {shop.city}, {shop.state} {shop.zip}
+          </p>
+          <p>Telephone: {shop.telephone}</p>
+          <button type="button" className="button">
+            <a href={shop.website} target="_blank">Visit Our Website!</a>
+          </button>
+        </div>
 
-      <h2>{shop.name}'s Reviews</h2>
-      <ShopReviewsList reviews={shop.reviews} />
-      <Link to={`/shops/${shop.id}/reviews/new`}>
-        <button type="button" className="button">
-          Add a new Review
-        </button>
-      </Link>
+        <div className="grid-container medium-6">
+          <h2>{shop.name}'s Reviews</h2>
+            <ShopReviewsList reviews={shop.reviews} />
+        </div>
+      </div>
     </div>
   )
 }
