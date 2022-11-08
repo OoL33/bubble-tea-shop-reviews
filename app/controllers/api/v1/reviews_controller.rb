@@ -3,7 +3,7 @@ class Api::V1::ReviewsController < ApiController
 		review = Review.new(review_params)
 
 		if review.save
-			render json: { review: review } 
+			render json: { review: review }
 
 		else
 			render json: { error: review.errors.full_messages }, status: :unprocessable_entity
@@ -13,6 +13,6 @@ class Api::V1::ReviewsController < ApiController
 	private
 
 	def review_params
-		params.require(:review).permit(:rating, :body)
+		params.require(:review).permit(:rating, :body, :shop_id)
 	end
 end

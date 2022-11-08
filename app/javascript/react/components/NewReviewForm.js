@@ -1,7 +1,7 @@
 import React, { useState, setState } from "react"
 
 const NewReviewForm = (props) => {
-	
+
 	const [reviewRecord, setReviewRecord] = useState({
 		rating: "",
 		body: ""
@@ -19,7 +19,7 @@ const NewReviewForm = (props) => {
 
 		try {
 			const shopId = props.show.match.params.id
-			const response = await fetch(`/api/v1/shops/${shopId}`, {
+			const response = await fetch(`/api/v1/shops/${shopId}/reviews`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json"
@@ -31,7 +31,7 @@ const NewReviewForm = (props) => {
 				throw new Error(errorMessage)
 			}
 			const responseBody = await response.json()
-			
+
 
 		} catch (error) {
 			console.error(`Error in fetch: ${error.message}`)
@@ -43,9 +43,9 @@ const NewReviewForm = (props) => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<h1>New Review Form:</h1>
-			<input type="hidden" id="shop" name="shop" value={props.shop.id} />
+			{/* <input type="hidden" id="shop" name="shop" value={props.shop.id} /> */}
 			<label>Rating:
-				<input 
+				<input
 					name="rating"
 					id="rating"
 					type="text"
@@ -54,7 +54,7 @@ const NewReviewForm = (props) => {
 				/>
 			</label>
 			<label>Review:
-				<input 
+				<input
 				name="body"
 				id="body"
 				type="text"
