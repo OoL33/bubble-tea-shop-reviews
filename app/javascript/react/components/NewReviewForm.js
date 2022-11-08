@@ -1,10 +1,12 @@
-import React, { useState, setState } from "react"
+import React, { useState, setState, useEffect } from "react"
 
 const NewReviewForm = (props) => {
 
 	const [reviewRecord, setReviewRecord] = useState({
-		rating: "",
-		body: ""
+		rating: null,
+		body: "",
+		user_id: "",
+		shop_id: ""
 	})
 
 	const changeHandler = (event) => {
@@ -14,11 +16,14 @@ const NewReviewForm = (props) => {
 		})
 	}
 
+
+
 	const handleSubmit = async (event) => {
 		event.preventDefault()
 
 		try {
-			const shopId = props.show.match.params.id
+			debugger
+			const shopId = props.shopRecord.id
 			const response = await fetch(`/api/v1/shops/${shopId}/reviews`, {
 				method: "POST",
 				credentials: "same-origin",
@@ -35,6 +40,11 @@ const NewReviewForm = (props) => {
 			const responseBody = await response.json()
 			setReviewRecord(responseBody)
 
+			props.setReviews([
+				...props.reviews,
+				reviewRecord
+			])
+
 
 		} catch (error) {
 			console.error(`Error in fetch: ${error.message}`)
@@ -42,17 +52,19 @@ const NewReviewForm = (props) => {
 
 	}
 
+	// useEffect(() => {
+	// 	handleSubmit()
+	// }, [])
 
 	return (
 		<form onSubmit={handleSubmit}>
 			<h1>New Review Form:</h1>
-			{/* <input type="hidden" id="shop" name="shop" value={props.shop.id} /> */}
 			<label>Rating:
 				<input
 					name="rating"
 					id="rating"
-					type="text"
-					value={reviewRecord.rating}
+					type="number"
+					value={reviewRecord.rating || ""}
 					onChange={changeHandler}
 				/>
 			</label>

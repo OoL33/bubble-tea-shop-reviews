@@ -4,9 +4,11 @@ import { Link } from "react-router-dom"
 import ShopReviewsList from "./ShopReviewsList"
 
 const ShopShowPage = (props) => {
+  debugger
   const [shop, setShop] = useState({
     reviews: []
   })
+  const [reviews, setReviews] = useState([])
 
   const fetchShop = async () => {
     try {
@@ -42,7 +44,12 @@ const ShopShowPage = (props) => {
 			</div>
 			<div>
 				<NewReviewForm
-					show={props}
+					// shop={props.match.params.id}
+          setShop = {setShop}
+          shopRecord = {shop}
+          setReviews = {setReviews}
+          reviews = {reviews}
+
 				/>
 			</div>
       <h2>{shop.name}'s Reviews</h2>
