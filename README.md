@@ -1,23 +1,23 @@
-# README
+# About
 This app allows users to see and review bubble tea shops around Boston, MA.
 
 This app is built using React on Rails and Postgres.
 
-### Contributors
+## Contributors
 
 Alana Lee, Karen Wong, Kathleen Foley, Taylor Le 
 
-### Ruby Version
+## Ruby Version
 
 - Ruby 2.7.3
 
-### System Dependencies
+## System Dependencies
 
 - Rails 7.0.4
 - PostgreSQL 14.5
 
 
-### Instructions to Run Application Locally
+## Instructions to Run Application Locally
 
 I. Set up the project 
 1. `git clone https://github.com/OoL33/bubble-tea-shop-reviews.git`
