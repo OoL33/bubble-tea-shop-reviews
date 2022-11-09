@@ -7,7 +7,7 @@ const ShopShowPage = (props) => {
   const [shop, setShop] = useState({
     reviews: [],
   })
-  // const [reviews, setReviews] = useState([])
+  const [reviews, setReviews] = useState([])
 
   debugger
 
@@ -51,13 +51,12 @@ const ShopShowPage = (props) => {
 			const newReviewData = await response.json()
 
       let currentReviews = shop.reviews
-      currentReviews = currentReviews.concat(newReviewData)
+      currentReviews = currentReviews.concat(newReviewData.review)
       debugger
 			setShop({
         ...shop,
         ["reviews"]: currentReviews
       })
-
 		} catch (error) {
 			console.error(`Error in fetch: ${error.message}`)
 		}
@@ -86,7 +85,10 @@ const ShopShowPage = (props) => {
 				/>
 			</div>
       <h2>{shop.name}'s Reviews</h2>
-      <ShopReviewsList key={shop.id} reviews={shop.reviews} />
+      <ShopReviewsList 
+        key={shop.id} 
+        shop={shop}
+      />
       <Link to={`/shops/${shop.id}/reviews/new`}>
         <button type="button" className="button">
           Add a new Review

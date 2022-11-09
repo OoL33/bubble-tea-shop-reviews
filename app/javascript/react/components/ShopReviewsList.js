@@ -3,7 +3,7 @@ import ShopReviewTile from "./ShopReviewTile"
 
 const ShopReviewsList = (props) => {
   debugger
-  const reviewTiles = props.reviews.map((review) => {
+  const reviewTiles = props.shop.reviews.map((review) => {
     return (
       <ShopReviewTile key={review.id} review={review} />
     )
