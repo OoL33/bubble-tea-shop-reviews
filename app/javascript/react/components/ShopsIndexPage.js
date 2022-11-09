@@ -46,12 +46,6 @@ const ShopsIndexPage = () => {
           </div>
         </div>
       </div>
-
-      <Link to="/shops/new">
-        <button type="button" className="button">
-          Add a new Bubble Tea Shop
-        </button>
-      </Link>
     </div>
   )
 }
