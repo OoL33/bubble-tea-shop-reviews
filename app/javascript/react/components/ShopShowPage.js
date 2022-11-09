@@ -24,54 +24,54 @@ const ShopShowPage = (props) => {
     }
   }
 
-  useEffect(() => {
+    useEffect(() => {
     fetchShop()
-  }, [])
+    }, [])
 
   const submit = async (newReview) => {
-		try {
-			const response = await fetch(`/api/v1/shops/${shop.id}/reviews`, {
-				method: "POST",
-				credentials: "same-origin",
-				headers: {
-					"Accept": "application/json",
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({ review: newReview })
-			})
-			if (!response.ok) {
-				const errorMessage = `${response.status} (${response.statusText})`
-				throw new Error(errorMessage)
-			}
-			const newReviewData = await response.json()
+    try {
+      const response = await fetch(`/api/v1/shops/${shop.id}/reviews`, {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+        body: JSON.stringify({ review: newReview })
+      })
+      if (!response.ok) {
+        const errorMessage = `${response.status} (${response.statusText})`
+        throw new Error(errorMessage)
+      }
+      const newReviewData = await response.json()
       let currentReviews = shop.reviews
       currentReviews = currentReviews.concat(newReviewData.review)
-			setShop({
+      setShop({
         ...shop,
         ["reviews"]: currentReviews
       })
-		} catch (error) {
-			console.error(`Error in fetch: ${error.message}`)
-		}
-	}
+    } catch (error) {
+      console.error(`Error in fetch: ${error.message}`)
+    }
+  }
 
   return (
-		<div>
-			<div>
-				<h1 className="header-text">{shop.name}</h1>
-				<img src={shop.picture}/>
-				<p>{shop.address}</p>
-				<p>
-					{shop.city}, {shop.state} {shop.zip}
-				</p>
-				<a href={shop.website} target="_blank">{shop.website}</a>
-				<p>Telephone: {shop.telephone}</p>
-			</div>
-			<div>
-				<NewReviewForm
+    <div>
+      <div>
+        <h1 className="header-text">{shop.name}</h1>
+        <img src={shop.picture}/>
+        <p>{shop.address}</p>
+        <p>
+          {shop.city}, {shop.state} {shop.zip}
+        </p>
+        <a href={shop.website} target="_blank">{shop.website}</a>
+        <p>Telephone: {shop.telephone}</p>
+      </div>
+      <div>
+        <NewReviewForm
           submit = {submit}
-				/>
-			</div>
+        />
+      </div>
       <h2>{shop.name}'s Reviews</h2>
       <ShopReviewsList 
         key={shop.id} 
