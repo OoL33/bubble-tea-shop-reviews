@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import ShopTile from "./ShopTile"
 
-const ShopIndexPage = () => {
+const ShopsIndexPage = () => {
   const [getShops, setShops] = useState([])
 
   const showShops = async () => {
@@ -56,4 +56,4 @@ const ShopIndexPage = () => {
   )
 }
 
-export default ShopIndexPage
+export default ShopsIndexPage

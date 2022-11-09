@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { Redirect } from "react-router-dom"
 import _ from "lodash"
 import ErrorList from "./ErrorList"
@@ -29,7 +29,6 @@ const NewShopForm = (props) => {
         }
       }
     })
-
     setErrors(submitErrors)
     return _.isEmpty(submitErrors)
   }

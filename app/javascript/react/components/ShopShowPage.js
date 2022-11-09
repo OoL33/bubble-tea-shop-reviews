@@ -1,10 +1,12 @@
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
+import NewReviewForm from "./NewReviewForm"
 import { Link } from "react-router-dom"
 import ShopReviewsList from "./ShopReviewsList"
 
 const ShopShowPage = (props) => {
   const [shop, setShop] = useState({
-    reviews: []
+    current_user: {},
+    reviews: [],
   })
 
   const fetchShop = async () => {
@@ -24,8 +26,40 @@ const ShopShowPage = (props) => {
   }
 
   useEffect(() => {
-    fetchShop()
+  fetchShop()
   }, [])
+
+  const submit = async (newReview) => {
+    try {
+      const response = await fetch(`/api/v1/shops/${shop.id}/reviews`, {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+        body: JSON.stringify({ review: newReview })
+      })
+      if (!response.ok) {
+        const errorMessage = `${response.status} (${response.statusText})`
+        throw new Error(errorMessage)
+      }
+      const newReviewData = await response.json()
+      let currentReviews = shop.reviews
+      currentReviews = currentReviews.concat(newReviewData.review)
+      setShop({
+        ...shop,
+        ["reviews"]: currentReviews
+      })
+    } catch (error) {
+      console.error(`Error in fetch: ${error.message}`)
+    }
+  }
+
+  let showReviewForm
+  if (shop.current_user) {
+    showReviewForm = <div><NewReviewForm submit = {submit} /></div>
+  }
 
   return (
     <div className="grid-container">
@@ -43,11 +77,14 @@ const ShopShowPage = (props) => {
           <button type="button" className="button">
             <a href={shop.website} target="_blank">Visit Our Website!</a>
           </button>
+          {showReviewForm}
         </div>
-
         <div className="grid-container medium-6">
           <h2>{shop.name}'s Reviews</h2>
-            <ShopReviewsList reviews={shop.reviews} />
+          <ShopReviewsList 
+            key={shop.id} 
+            shop={shop}
+          />
         </div>
       </div>
     </div>
