@@ -26,28 +26,38 @@
 }
 
 .header-text{
+  margin: 1em;
   font-family: 'Fredoka One', sans-serif;
+}
+
+.page-header{
+  text-align: center;
 }
 
 body{
   background-color: #FEFAE0;
 }
 
-h1, h2 {
+h1, h2{
   color: #D4A373;
-  margin: 1em;
+  margin: 0.5em;
   font-family: 'Fredoka One', sans-serif;
 }
 
-h3, h4, h5, h6, p {
+h3, h4, h5, h6, p, .form-text {
   font-family: 'Quicksand', sans-serif;
 }
 
 .form-container{
   border: solid #CCD5AE;
   border-radius: 1em;
-  margin: 2em;
+  margin: 2em auto;
   padding: 1em 2em;
+
+}
+
+.new-review{
+  margin: 0em;
 }
 
 .button{

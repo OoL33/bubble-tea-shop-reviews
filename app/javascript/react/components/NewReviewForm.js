@@ -50,27 +50,29 @@ const NewReviewForm = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <ErrorList errors={errors} />
-      <h1>New Review Form:</h1>
-      <label>Rating:
-        <input
-          name="rating"
-          id="rating"
-          type="number"
-          value={reviewRecord.rating || ""}
-          onChange={changeHandler}
-        />
-      </label>
-      <label>Review:
-        <input
-          name="body"
-          id="body"
-          type="text"
-          value={reviewRecord.body}
-          onChange={changeHandler}
-        />
-      </label>
-      <div>
-        <input type="submit" value="Add Review" />
+      <div className="new-review form-container">
+        <h2>New Review Form:</h2>
+        <label className="form-text">Rating:
+          <input
+            name="rating"
+            id="rating"
+            type="number"
+            value={reviewRecord.rating || ""}
+            onChange={changeHandler}
+          />
+        </label>
+        <label className="form-text">Review:
+          <input
+            name="body"
+            id="body"
+            type="text"
+            value={reviewRecord.body}
+            onChange={changeHandler}
+          />
+        </label>
+        <div>
+          <input className="button" type="submit" value="Add Review" />
+        </div>
       </div>
     </form>
   )
