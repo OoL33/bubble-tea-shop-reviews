@@ -1,13 +1,31 @@
 import React, { useState } from "react"
+import _ from "lodash"
+import ErrorList from "./ErrorList"
 
 const NewReviewForm = (props) => {
-
   const [reviewRecord, setReviewRecord] = useState({
     rating: null,
     body: "",
     user: {},
     shop: {}
   })
+
+  const [errors, setErrors] = useState({})
+
+  const validForSubmission = () => {
+    let submitErrors = {}
+    const requiredFields = ["rating", "body"]
+    requiredFields.forEach(field => {
+      if (reviewRecord[field] === null || reviewRecord[field].trim() === "") {
+        submitErrors = {
+          ...submitErrors,
+          [field]: "is blank"
+        }
+      }
+    })
+    setErrors(submitErrors)
+    return _.isEmpty(submitErrors)
+  }
 
   const changeHandler = (event) => {
     setReviewRecord({
@@ -18,7 +36,9 @@ const NewReviewForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    props.submit(reviewRecord)
+    if (validForSubmission()) {
+      props.submit(reviewRecord)
+    }
     setReviewRecord({
       rating: null,
       body: "",
@@ -29,6 +49,7 @@ const NewReviewForm = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <ErrorList errors={errors} />
       <h1>New Review Form:</h1>
       <label>Rating:
         <input
