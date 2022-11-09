@@ -1,12 +1,12 @@
-import React, { useState, setState, useEffect } from "react"
+import React, { useState } from "react"
 
 const NewReviewForm = (props) => {
 
 	const [reviewRecord, setReviewRecord] = useState({
 		rating: null,
 		body: "",
-		user_id: "",
-		shop_id: ""
+    user: {},
+    shop: {}
 	})
 
 	const changeHandler = (event) => {
@@ -22,47 +22,10 @@ const NewReviewForm = (props) => {
 		setReviewRecord({
 			rating: null,
 			body: "",
-			user_id: "",
-			shop_id: ""
+      user: {},
+      shop: {}
 		})
 	}
-
-	// const submit = async (event) => {
-	// 	event.preventDefault()
-
-	// 	try {
-	// 		const shopId = props.shop.id
-	// 		const response = await fetch(`/api/v1/shops/${shopId}/reviews`, {
-	// 			method: "POST",
-	// 			credentials: "same-origin",
-	// 			headers: {
-	// 				"Accept": "application/json",
-	// 				"Content-Type": "application/json"
-	// 			},
-	// 			body: JSON.stringify({ review: reviewRecord })
-	// 		})
-	// 		if (!response.ok) {
-	// 			const errorMessage = `${response.status} (${response.statusText})`
-	// 			throw new Error(errorMessage)
-	// 		}
-	// 		const responseBody = await response.json()
-	// 		setReviewRecord(responseBody)
-
-	// 		let currentShop = props.shop
-	// 		currentShop.reviews.push(reviewRecord)
-	// 		debugger
-	// 		props.setShop(currentShop)
-
-
-	// 	} catch (error) {
-	// 		console.error(`Error in fetch: ${error.message}`)
-	// 	}
-
-	// }
-
-	// useEffect(() => {
-	// 	handleSubmit()
-	// }, [])
 
 	return (
 		<form onSubmit={handleSubmit}>

@@ -2,7 +2,6 @@ import React from "react"
 import ShopReviewTile from "./ShopReviewTile"
 
 const ShopReviewsList = (props) => {
-  debugger
   const reviewTiles = props.shop.reviews.map((review) => {
     return (
       <ShopReviewTile key={review.id} review={review} />

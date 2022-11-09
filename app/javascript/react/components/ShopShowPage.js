@@ -7,9 +7,6 @@ const ShopShowPage = (props) => {
   const [shop, setShop] = useState({
     reviews: [],
   })
-  const [reviews, setReviews] = useState([])
-
-  debugger
 
   const fetchShop = async () => {
     try {
@@ -32,9 +29,7 @@ const ShopShowPage = (props) => {
   }, [])
 
   const submit = async (newReview) => {
-
 		try {
-			// const shopId = props.shop.id
 			const response = await fetch(`/api/v1/shops/${shop.id}/reviews`, {
 				method: "POST",
 				credentials: "same-origin",
@@ -49,10 +44,8 @@ const ShopShowPage = (props) => {
 				throw new Error(errorMessage)
 			}
 			const newReviewData = await response.json()
-
       let currentReviews = shop.reviews
       currentReviews = currentReviews.concat(newReviewData.review)
-      debugger
 			setShop({
         ...shop,
         ["reviews"]: currentReviews
@@ -60,7 +53,6 @@ const ShopShowPage = (props) => {
 		} catch (error) {
 			console.error(`Error in fetch: ${error.message}`)
 		}
-
 	}
 
   return (
@@ -77,11 +69,7 @@ const ShopShowPage = (props) => {
 			</div>
 			<div>
 				<NewReviewForm
-          // setShop = {setShop}
-          // shop = {shop}
           submit = {submit}
-          // setReviews = {setReviews}
-          // reviews = {reviews}
 				/>
 			</div>
       <h2>{shop.name}'s Reviews</h2>
