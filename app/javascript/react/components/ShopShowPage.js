@@ -4,11 +4,12 @@ import { Link } from "react-router-dom"
 import ShopReviewsList from "./ShopReviewsList"
 
 const ShopShowPage = (props) => {
-  debugger
   const [shop, setShop] = useState({
-    reviews: []
+    reviews: [],
   })
-  const [reviews, setReviews] = useState([])
+  // const [reviews, setReviews] = useState([])
+
+  debugger
 
   const fetchShop = async () => {
     try {
@@ -30,6 +31,39 @@ const ShopShowPage = (props) => {
     fetchShop()
   }, [])
 
+  const submit = async (newReview) => {
+
+		try {
+			// const shopId = props.shop.id
+			const response = await fetch(`/api/v1/shops/${shop.id}/reviews`, {
+				method: "POST",
+				credentials: "same-origin",
+				headers: {
+					"Accept": "application/json",
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({ review: newReview })
+			})
+			if (!response.ok) {
+				const errorMessage = `${response.status} (${response.statusText})`
+				throw new Error(errorMessage)
+			}
+			const newReviewData = await response.json()
+
+      let currentReviews = shop.reviews
+      currentReviews = currentReviews.concat(newReviewData)
+      debugger
+			setShop({
+        ...shop,
+        ["reviews"]: currentReviews
+      })
+
+		} catch (error) {
+			console.error(`Error in fetch: ${error.message}`)
+		}
+
+	}
+
   return (
 		<div>
 			<div>
@@ -44,16 +78,15 @@ const ShopShowPage = (props) => {
 			</div>
 			<div>
 				<NewReviewForm
-					// shop={props.match.params.id}
-          setShop = {setShop}
-          shopRecord = {shop}
-          setReviews = {setReviews}
-          reviews = {reviews}
-
+          // setShop = {setShop}
+          // shop = {shop}
+          submit = {submit}
+          // setReviews = {setReviews}
+          // reviews = {reviews}
 				/>
 			</div>
       <h2>{shop.name}'s Reviews</h2>
-      <ShopReviewsList reviews={shop.reviews} />
+      <ShopReviewsList key={shop.id} reviews={shop.reviews} />
       <Link to={`/shops/${shop.id}/reviews/new`}>
         <button type="button" className="button">
           Add a new Review

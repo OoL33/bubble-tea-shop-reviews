@@ -16,41 +16,49 @@ const NewReviewForm = (props) => {
 		})
 	}
 
-
-
-	const handleSubmit = async (event) => {
+	const handleSubmit = (event) => {
 		event.preventDefault()
-
-		try {
-			debugger
-			const shopId = props.shopRecord.id
-			const response = await fetch(`/api/v1/shops/${shopId}/reviews`, {
-				method: "POST",
-				credentials: "same-origin",
-				headers: {
-					"Accept": "application/json",
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({ review: reviewRecord })
-			})
-			if (!response.ok) {
-				const errorMessage = `${response.status} (${response.statusText})`
-				throw new Error(errorMessage)
-			}
-			const responseBody = await response.json()
-			setReviewRecord(responseBody)
-
-			props.setReviews([
-				...props.reviews,
-				reviewRecord
-			])
-
-
-		} catch (error) {
-			console.error(`Error in fetch: ${error.message}`)
-		}
-
+		props.submit(reviewRecord)
+		setReviewRecord({
+			rating: null,
+			body: "",
+			user_id: "",
+			shop_id: ""
+		})
 	}
+
+	// const submit = async (event) => {
+	// 	event.preventDefault()
+
+	// 	try {
+	// 		const shopId = props.shop.id
+	// 		const response = await fetch(`/api/v1/shops/${shopId}/reviews`, {
+	// 			method: "POST",
+	// 			credentials: "same-origin",
+	// 			headers: {
+	// 				"Accept": "application/json",
+	// 				"Content-Type": "application/json"
+	// 			},
+	// 			body: JSON.stringify({ review: reviewRecord })
+	// 		})
+	// 		if (!response.ok) {
+	// 			const errorMessage = `${response.status} (${response.statusText})`
+	// 			throw new Error(errorMessage)
+	// 		}
+	// 		const responseBody = await response.json()
+	// 		setReviewRecord(responseBody)
+
+	// 		let currentShop = props.shop
+	// 		currentShop.reviews.push(reviewRecord)
+	// 		debugger
+	// 		props.setShop(currentShop)
+
+
+	// 	} catch (error) {
+	// 		console.error(`Error in fetch: ${error.message}`)
+	// 	}
+
+	// }
 
 	// useEffect(() => {
 	// 	handleSubmit()
