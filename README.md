@@ -1,30 +1,35 @@
 # README
+This app allows users to see and review bubble tea shops around Boston, MA.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is built using React on Rails and Postgres.
 
-Project Name: Bubble Tea Shop Reviews
+### Contributors
 
-Authors: Katie Foley, Alana Lee, Karen Wong, Taylor Le
+Alana Lee, Karen Wong, Kathleen Foley, Taylor Le 
 
-Brief Description: This app allows users to see and review bubble tea shops around Boston, MA.
+### Ruby Version
 
-Things you may want to cover:
+- Ruby 2.7.3
 
-* Ruby version
+### System Dependencies
 
-* System dependencies: 
+- Rails 7.0.4
+- PostgreSQL 14.5
 
-* Configuration
 
-* Database creation
+### Instructions to Run Application Locally
 
-* Database initialization
+I. Set up the project 
+1. `git clone https://github.com/OoL33/bubble-tea-shop-reviews.git`
+2. `bundle install` (To install gem dependencies)
 
-* How to run the test suite
+II. Create and Seed Database
+1. `bundle exec rake db:create`
+1. `bundle exec rake db:migrate`
+2. `bundle exec rake db:seed`
 
-* Services (job queues, cache servers, search engines, etc.)
+III. In a separate terminal window, 
+1. `run bundle exec rails s`
+2. navigate to [localhost/3000](http://localhost:3000/)
 
-* Deployment instructions
 
-* ...
