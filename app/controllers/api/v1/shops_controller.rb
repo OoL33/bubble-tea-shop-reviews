@@ -2,7 +2,7 @@ class Api::V1::ShopsController < ApiController
   before_action :authorize_admin, only: [:create]
 
   def index
-    render json: Shop.all
+    render json: Shop.order(name: :asc)
   end
 
   def show
