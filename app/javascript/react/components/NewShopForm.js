@@ -170,6 +170,18 @@ const NewShopForm = (props) => {
             </label>
           </div>
 
+          <div className="medium-9 cell">
+            <label>
+              Shop Picture (URL)
+              <input 
+                type="text"
+                name="picture"
+                value={shopRecord.picture}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
+
           <div className="button-group cell">
             <input 
               className="button"

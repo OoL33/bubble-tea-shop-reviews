@@ -1,5 +1,6 @@
 class Api::V1::ShopsController < ApiController
-  before_action :authorize_admin, only: [:create]
+  before_action :authenticate_user, only: [:create, :authorize]
+  before_action :authorize_admin, only: [:create, :authenticate]
 
   def index
     render json: Shop.order(name: :asc)
@@ -22,11 +23,11 @@ class Api::V1::ShopsController < ApiController
   private
 
   def shop_params
-    params.require(:shop).permit(:name, :address, :city, :state, :zip)
+    params.require(:shop).permit(:name, :address, :city, :state, :zip, :website, :telephone, :picture)
   end
 
   def authorize_admin
-    if !user_signed_in? && !(current_user.role == "admin")
+    if user_signed_in? && !(current_user.role == "admin")
       render json: {error: ["Only admins have access to this page."]}
     end
   end
