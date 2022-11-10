@@ -24,6 +24,7 @@ Alana Lee, Karen Wong, Kathleen Foley, Taylor Le
 I. Set up the project 
 1. `git clone https://github.com/OoL33/bubble-tea-shop-reviews.git`
 2. `bundle install` (To install gem dependencies)
+3. `yarn install` (To install package manager)
 
 II. Create and Seed Database
 1. `bundle exec rake db:create`
