@@ -86,7 +86,7 @@ const NewShopForm = (props) => {
           <div className="medium-6 cell form-text">
             <label>
               Shop Name
-              <input 
+              <input
                 type="text"
                 placeholder="Ex. Gong Cha"
                 name="name"
@@ -99,7 +99,7 @@ const NewShopForm = (props) => {
           <div className="small-12 cell form-text">
             <label>
               Address
-              <input 
+              <input
                 type="text"
                 placeholder="123 Main Street Unit 1"
                 name="address"
@@ -112,7 +112,7 @@ const NewShopForm = (props) => {
           <div className="medium-6 cell form-text">
             <label>
               City
-              <input 
+              <input
                 type="text"
                 name="city"
                 value={shopRecord.city}
@@ -124,7 +124,7 @@ const NewShopForm = (props) => {
           <div className="medium-6 cell form-text">
             <label>
               State
-              <input 
+              <input
                 type="text"
                 name="state"
                 value={shopRecord.state}
@@ -136,7 +136,7 @@ const NewShopForm = (props) => {
           <div className="small-12 cell form-text">
             <label>
               Zip Code
-              <input 
+              <input
                 type="text"
                 name="zip"
                 value={shopRecord.zip}
@@ -148,7 +148,7 @@ const NewShopForm = (props) => {
           <div className="medium-9 cell form-text">
             <label>
               Telephone
-              <input 
+              <input
                 type="text"
                 placeholder="XXX-XXX-XXXX"
                 name="telephone"
@@ -161,7 +161,7 @@ const NewShopForm = (props) => {
           <div className="medium-9 cell form-text">
             <label>
               Website
-              <input 
+              <input
                 type="text"
                 name="website"
                 value={shopRecord.website}
@@ -171,7 +171,7 @@ const NewShopForm = (props) => {
           </div>
 
           <div className="button-group cell form-text">
-            <input 
+            <input
               className="button"
               type="submit"
             />
