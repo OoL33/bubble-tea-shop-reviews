@@ -12,6 +12,10 @@ class Api::V1::ShopsController < ApiController
   def create
     shop = Shop.new(shop_params)
 
+    if shop.picture == ""
+      shop.picture = "https://i.pinimg.com/originals/c4/af/a0/c4afa0ab58a1343be2b944ec28a5fdae.jpg"
+    end
+
     if shop.save
       render json: { shop: shop }
     else
