@@ -6,6 +6,10 @@
   color: #faedcd;
 }
 
+.bubble-tea-icon{
+  max-width: 2em;
+}
+
 .header-link{
   background-color: #D4A373;
   color: #faedcd;
@@ -14,14 +18,14 @@
 .header-link>a{
   background-color: #D4A373;
   color: #faedcd;
+
+  &:hover{
+    background-color: #B1BA63;
+    color: #E9EDC9 ;
+  }
 }
 
 .header-link:hover{
-  color: #E9EDC9 ;
-}
-
-.header-link>a:hover{
-  background-color: #b1ba63;
   color: #E9EDC9 ;
 }
 
@@ -63,13 +67,18 @@ h3, h4, h5, h6, p, .form-text {
 .button{
   background-color: #CCD5AE;
   font-family: 'Quicksand', sans-serif;
-  color: #FEFAE0;
+  color: #000000;
   border-radius: 1em;
+
+  &:hover{
+    background-color: #FAEDCD;
+    color: #000000;
+  }
 }
 
 .button>a{
   font-family: 'Quicksand', sans-serif;
-  color: #FEFAE0;
+  color: #000000;
   border-radius: 1em;
 }
 
@@ -85,11 +94,12 @@ h3, h4, h5, h6, p, .form-text {
   background-color: #CCD5AE;
   text-align: center;
   margin: 1em;
+  
+  &:hover{
+    background-color: #D4A373;
+  }
 }
 
-.card:hover{
-  background-color: #D4A373;
-}
 
 .card-title {
   text-align: center;
@@ -97,10 +107,6 @@ h3, h4, h5, h6, p, .form-text {
 
 .webpage {
   margin: 1em;
-}
-
-.button:hover{
-  background-color: #D4A373;
 }
 
 .review-box{
@@ -119,3 +125,24 @@ h3, h4, h5, h6, p, .form-text {
   margin-bottom: 1em;
 }
 
+footer{
+  padding: 3em 3em;
+}
+
+.fa-chevron-circle-up{
+  font-size: 3rem;
+  color: #D4A373;
+
+  &:hover {
+  color: lighten(#D4A373, 15%);
+  transition: color 0.3s ease-in;
+  }
+}
+
+.footer-link{
+  color: #B1BA63;
+
+  &:hover{
+    color: #D4A373;
+  }
+}
