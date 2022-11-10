@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bubble Tea Shop Reviews</title>
+  <title>Bubble Tea Devotees</title>
   <%= favicon_link_tag asset_path('favicon.ico') %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <script src="https://kit.fontawesome.com/9191ab314f.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
   <nav class="top-bar">
-    <h1 class="header-text"><a class="header-link" href="/">Bubble Tea Shop Reviews</a></h1>
+    <h1 class="header-text">
+      <%= image_tag("android-chrome-192x192.png", :class => "bubble-tea-icon", :alt => "bubble tea") %>
+      <a class="header-link" href="/">Bubble Tea Devotees</a>
+    </h1>
 
     <section class="top-bar-section">
-  
-        <%- if current_user -%>
-          <%- if current_user.role == "admin" -%>
-            <button type="button" class="button">
-              <%= link_to 'Add New Shop', shops_new_path %></li>
-            </button>
-          <%- end -%>
+      <%- if current_user -%>
+        <%- if current_user.role == "admin" -%>
           <button type="button" class="button">
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-          </button>
-        <%- else -%>
-          <button type="button" class="button">
-            <%= link_to 'Sign Up', new_user_registration_path %></li>
-          </button>
-          <button type="button" class="button">
-            <%= link_to 'Sign In', new_user_session_path %></li>
+            <%= link_to 'Add New Shop', shops_new_path %></li>
           </button>
         <%- end -%>
-
+        <button type="button" class="button">
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        </button>
+      <%- else -%>
+        <button type="button" class="button">
+          <%= link_to 'Sign Up', new_user_registration_path %></li>
+        </button>
+        <button type="button" class="button">
+          <%= link_to 'Sign In', new_user_session_path %></li>
+        </button>
+      <%- end -%>
     </section>
   </nav>
 
@@ -54,4 +56,22 @@
 
   <%= yield :extra_footer %>
 </body>
+
+<footer>
+  <div class="up-arrow cell">
+    <a href="#top"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
+  </div>
+  <div class="row author-info">
+    <div class="columns">
+      <h4>Meet the Devo-Teas</h4>
+      <ul class="menu simple tag-section">
+        <li><a class="footer-link" target="_blank" href="https://github.com/OoL33/bubble-tea-shop-reviews">GitHub</a></li>
+        <li><a class="footer-link" target="_blank" href="https://www.linkedin.com/in/alanaolee/">Alana Lee</a></li>
+        <li><a class="footer-link" target="_blank" href="https://www.linkedin.com/in/kathleencfoley/">Kathleen Foley</a></li>
+        <li><a class="footer-link" target="_blank" href="https://www.linkedin.com/in/kwong402/">Karen Wong</a></li>
+        <li><a class="footer-link" target="_blank" href="https://www.linkedin.com/in/taylorkingstonle/">Taylor Le</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
 </html>
