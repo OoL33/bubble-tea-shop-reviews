@@ -78,15 +78,15 @@ const NewShopForm = (props) => {
 
   return(
     <form onSubmit={postNewShop}>
-      <h2>Submit a new Bubble Tea Shop</h2>
+      <h2 className="page-header">Submit a new Bubble Tea Shop</h2>
       <ErrorList errors={errors} />
 
       <div className="grid-container form-container">
         <div className="grid-x grid-padding-x">
-          <div className="medium-6 cell">
+          <div className="medium-6 cell form-text">
             <label>
               Shop Name
-              <input 
+              <input
                 type="text"
                 placeholder="Ex. Gong Cha"
                 name="name"
@@ -96,10 +96,10 @@ const NewShopForm = (props) => {
             </label>
           </div>
 
-          <div className="small-12 cell">
+          <div className="small-12 cell form-text">
             <label>
               Address
-              <input 
+              <input
                 type="text"
                 placeholder="123 Main Street Unit 1"
                 name="address"
@@ -109,10 +109,10 @@ const NewShopForm = (props) => {
             </label>
           </div>
 
-          <div className="medium-6 cell">
+          <div className="medium-6 cell form-text">
             <label>
               City
-              <input 
+              <input
                 type="text"
                 name="city"
                 value={shopRecord.city}
@@ -121,10 +121,10 @@ const NewShopForm = (props) => {
             </label>
           </div>
 
-          <div className="medium-6 cell">
+          <div className="medium-6 cell form-text">
             <label>
               State
-              <input 
+              <input
                 type="text"
                 name="state"
                 value={shopRecord.state}
@@ -133,10 +133,10 @@ const NewShopForm = (props) => {
             </label>
           </div>
 
-          <div className="small-12 cell">
+          <div className="small-12 cell form-text">
             <label>
               Zip Code
-              <input 
+              <input
                 type="text"
                 name="zip"
                 value={shopRecord.zip}
@@ -145,10 +145,10 @@ const NewShopForm = (props) => {
             </label>
           </div>
 
-          <div className="medium-9 cell">
+          <div className="medium-9 cell form-text">
             <label>
               Telephone
-              <input 
+              <input
                 type="text"
                 placeholder="XXX-XXX-XXXX"
                 name="telephone"
@@ -158,10 +158,10 @@ const NewShopForm = (props) => {
             </label>
           </div>
 
-          <div className="medium-9 cell">
+          <div className="medium-9 cell form-text">
             <label>
               Website
-              <input 
+              <input
                 type="text"
                 name="website"
                 value={shopRecord.website}
@@ -182,8 +182,8 @@ const NewShopForm = (props) => {
             </label>
           </div>
 
-          <div className="button-group cell">
-            <input 
+          <div className="button-group cell form-text">
+            <input
               className="button"
               type="submit"
             />

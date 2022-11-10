@@ -6,40 +6,49 @@
   color: #faedcd;
 }
 
+.bubble-tea-icon{
+  max-width: 2em;
+}
+
 .header-link{
   background-color: #D4A373;
   color: #faedcd;
+
+  &:hover{
+    color: #E9EDC9 ;
+  }
 }
 
 .header-link>a{
   background-color: #D4A373;
   color: #faedcd;
-}
 
-.header-link:hover{
-  color: #E9EDC9 ;
-}
-
-.header-link>a:hover{
-  background-color: #b1ba63;
-  color: #E9EDC9 ;
+  &:hover{
+    background-color: #B1BA63;
+    color: #E9EDC9 ;
+  }
 }
 
 .header-text{
+  margin: 1em;
   font-family: 'Fredoka One', sans-serif;
+}
+
+.page-header{
+  text-align: center;
 }
 
 body{
   background-color: #FEFAE0;
 }
 
-h1, h2 {
+h1, h2{
   color: #D4A373;
-  margin: 1em;
+  margin: 0.5em;
   font-family: 'Fredoka One', sans-serif;
 }
 
-h3, h4, h5, h6, p {
+h3, h4, h5, h6, p, .form-text {
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -47,20 +56,30 @@ h3, h4, h5, h6, p {
   font-family: 'Quicksand', sans-serif;
   border: solid #CCD5AE;
   border-radius: 1em;
-  margin: 2em;
+  margin: 2em auto;
   padding: 1em 2em;
+
+}
+
+.new-review{
+  margin: 0em;
 }
 
 .button{
   background-color: #CCD5AE;
   font-family: 'Quicksand', sans-serif;
-  color: #FEFAE0;
+  color: #000000;
   border-radius: 1em;
+
+  &:hover{
+    background-color: #FAEDCD;
+    color: #000000;
+  }
 }
 
 .button>a{
   font-family: 'Quicksand', sans-serif;
-  color: #FEFAE0;
+  color: #000000;
   border-radius: 1em;
 }
 
@@ -76,11 +95,12 @@ h3, h4, h5, h6, p {
   background-color: #CCD5AE;
   text-align: center;
   margin: 1em;
+  
+  &:hover{
+    background-color: #D4A373;
+  }
 }
 
-.card:hover{
-  background-color: #D4A373;
-}
 
 .card-title {
   text-align: center;
@@ -88,10 +108,6 @@ h3, h4, h5, h6, p {
 
 .webpage {
   margin: 1em;
-}
-
-.button:hover{
-  background-color: #D4A373;
 }
 
 .review-box{
@@ -116,4 +132,26 @@ h3, h4, h5, h6, p {
 
 .devise-form{
   font-family: 'Quicksand', sans-serif;
+}
+
+footer{
+  padding: 3em 3em;
+}
+
+.fa-chevron-circle-up{
+  font-size: 3rem;
+  color: #D4A373;
+
+  &:hover {
+  color: lighten(#D4A373, 15%);
+  transition: color 0.3s ease-in;
+  }
+}
+
+.footer-link{
+  color: #B1BA63;
+
+  &:hover{
+    color: #D4A373;
+  }
 }
