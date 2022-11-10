@@ -13,6 +13,10 @@
 .header-link{
   background-color: #D4A373;
   color: #faedcd;
+
+  &:hover{
+    color: #E9EDC9 ;
+  }
 }
 
 .header-link>a{
@@ -23,10 +27,6 @@
     background-color: #B1BA63;
     color: #E9EDC9 ;
   }
-}
-
-.header-link:hover{
-  color: #E9EDC9 ;
 }
 
 .header-text{
