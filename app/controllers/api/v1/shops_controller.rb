@@ -22,7 +22,7 @@ class Api::V1::ShopsController < ApiController
   private
 
   def shop_params
-    params.require(:shop).permit(:name, :address, :city, :state, :zip)
+    params.require(:shop).permit(:name, :address, :city, :state, :zip, :website, :telephone, :picture)
   end
 
   def authorize_admin

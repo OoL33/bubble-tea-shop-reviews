@@ -4,7 +4,7 @@ import ErrorList from "./ErrorList"
 
 const NewReviewForm = (props) => {
   const [reviewRecord, setReviewRecord] = useState({
-    rating: null,
+    rating: "0",
     body: "",
     user: {},
     shop: {}
@@ -16,7 +16,7 @@ const NewReviewForm = (props) => {
     let submitErrors = {}
     const requiredFields = ["rating", "body"]
     requiredFields.forEach(field => {
-      if (reviewRecord[field] === null || reviewRecord[field].trim() === "") {
+      if (reviewRecord[field] === "0" || reviewRecord[field].trim() === "") {
         submitErrors = {
           ...submitErrors,
           [field]: "is blank"
@@ -40,7 +40,7 @@ const NewReviewForm = (props) => {
       props.submit(reviewRecord)
     }
     setReviewRecord({
-      rating: null,
+      rating: "0",
       body: "",
       user: {},
       shop: {}
@@ -48,18 +48,19 @@ const NewReviewForm = (props) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form-container" onSubmit={handleSubmit}>
       <ErrorList errors={errors} />
-      <div className="new-review form-container">
+      <div className="new-review">
         <h2>New Review Form:</h2>
         <label className="form-text">Rating:
-          <input
-            name="rating"
-            id="rating"
-            type="number"
-            value={reviewRecord.rating || ""}
-            onChange={changeHandler}
-          />
+          <select name="rating" id="rating" value={reviewRecord.rating || "0"} onChange={changeHandler}>
+            <option value="0">Select rating</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
         </label>
         <label className="form-text">Review:
           <input
